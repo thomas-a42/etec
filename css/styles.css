@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+
+.box{
+    width: 400px;
+    height: 400px;
+    background-color: #ffb5e1;
+    border: dotted 5px #000000;
+    margin: 10% auto;
+    padding: 70px;
+}
+
+.centeralizar{
+    text-align: center
+}
