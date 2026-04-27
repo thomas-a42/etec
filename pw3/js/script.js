@@ -8,4 +8,6 @@ function validarLogin(){
     } else {
         alert(`Usuário ou senha inválidos, tente novamente.`);
     }   
+    login = document.getElementById('login').value = ''; 
+    senha = document.getElementById('senha').value = ''; 
 }
