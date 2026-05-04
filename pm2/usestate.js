@@ -1,37 +1,49 @@
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { StyleSheet,Text, View, TextInput} from 'react-native';
 export default function App(){
-  return(<View style={estilos.contenedor}>
-    <Text style={estilos.rotulo}>Digite algo abaixo:</Text>
-    <TextInput style={estilos.campo}
-      placeholder="Escreva aqui..."
-    />
-    <View>
-      <Text style={estilos.rotulo}>Você está digitando:</Text>
-      <Text style={estilos.rotulo}>OK</Text>
-    </View>
-  </View>);//JSX
+return(<View style={estilos.contenedor}>
+        <Text style={estilos.rotulo}>Digite algo abaixo:</Text>
+        <TextInput style={estilos.campo}
+          placeholder="Escreva aqui..."
+        />
+        <View style={estilos.resultado}>
+          <Text style={estilos.rotulo}>Você está digitando:</Text>
+          <Text>OK</Text>
+        </View>
+      </View>);//JSX
 }
-
 const estilos = StyleSheet.create({
+  rotulo:{
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    color: '#333',
+  },
   contenedor: {
     flex: 1,
-    backgroundcolor: '#ffebf7',
+    backgroundColor: '#f5f5f5',
     padding: 40,
-    justifyContent: center,
-  },
-  rotulo: {
-    fontSize: 18,
-    fontWeight: bold,
-    marginBottom: 10,
-    color: '#161515',
+    justifyContent: 'center',
   },
   campo: {
     height: 50,
     borderWidth: 1,
-    borderColor: '#d5d5d5',
+    borderColor: '#ddd',
     borderRadius: 8,
     paddingHorizontal: 15,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#fff',
     fontSize: 16,
   },
+  resultado:{
+    marginTop: 30,
+    padding: 20,
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    borderLeftWidth: 5,
+    borderLeftColor: '#007AFF',
+    elevation: 2, // Sombra para Android
+    shadowColor: '#000', // Sombra para iOS
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+  }
+ 
 })
