@@ -1,13 +1,21 @@
-import { StyleSheet,Text, View, TextInput} from 'react-native';
+import { useState } from 'react';
+import { StyleSheet,Text, View, TextInput, Button} from 'react-native';
 export default function App(){
+  const [texto, setTexto] = useState('');
+  const [textoExibido, setTextoExibido] = useState('');
+  const confirmarTexto = () => { setTextoExibido(texto) };
 return(<View style={estilos.contenedor}>
         <Text style={estilos.rotulo}>Digite algo abaixo:</Text>
         <TextInput style={estilos.campo}
-          placeholder="Escreva aqui..."
+          placeholder="Escreva aqui..." onChangeText={(valor)=>{setTexto(valor); console.log(texto)}}
+          value={texto}
         />
+        <View style ={{ marginTop: 10 }}>
+          <Button title="Exibir" color="#007AFF" onPress={confirmarTexto}></Button>
+        </View>
         <View style={estilos.resultado}>
           <Text style={estilos.rotulo}>Você está digitando:</Text>
-          <Text>OK</Text>
+          <Text>{textoExibido}</Text>
         </View>
       </View>);//JSX
 }
